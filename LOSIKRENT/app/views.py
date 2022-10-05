@@ -165,9 +165,11 @@ def createdatamobil(request):
         return redirect('mobil')
 
 def updatemobil(request,id):
+    jenismobilobj = models.jenismobil.objects.all()
     mobilobj = models.mobil.objects.get(idmobil=id)
     if request.method == "GET":
         return render(request,'updatemobil.html', {
+            'alljenismobil' : jenismobilobj,
             'allmobil' : mobilobj,
         })
     else:
