@@ -2,10 +2,10 @@ from django.db import models
 
 # Create your models here.
 class penyewa(models.Model):
-    idpenyewa = models.CharField(max_length=10, primary_key=True)
-    nama = models.CharField(max_length=10)
+    idpenyewa = models.AutoField(primary_key=True)
+    nama = models.CharField(max_length=50)
     nomortelepon = models.IntegerField()
-    alamat = models.CharField(max_length=20)
+    alamat = models.CharField(max_length=50)
     nomorktp = models.IntegerField()
     dokumen = models.CharField(max_length=10)
 
@@ -13,17 +13,17 @@ class penyewa(models.Model):
         return str(self.nama)
 
 class karyawan(models.Model):
-    idkaryawan = models.CharField(max_length=10, primary_key=True)
+    idkaryawan = models.AutoField(primary_key=True)
     nama = models.CharField(max_length=10)
-    alamat = models.CharField(max_length=20)
+    alamat = models.CharField(max_length=50)
     nomortelepon = models.IntegerField()
 
     def __str__(self):
         return str(self.nama)
 
 class jenismobil (models.Model):
-    idjenismobil = models.CharField(max_length=10, primary_key=True)
-    namamobil = models.CharField(max_length=8)
+    idjenismobil = models.AutoField(primary_key=True)
+    namamobil = models.CharField(max_length=50)
     jumlahmobil = models.IntegerField()
     hargasewa = models.IntegerField()
 
@@ -31,7 +31,7 @@ class jenismobil (models.Model):
         return str(self.namamobil)
 
 class mobil (models.Model):
-    idmobil = models.CharField(max_length=10, primary_key=True)
+    idmobil = models.AutoField(primary_key=True)
     idjenismobil = models.ForeignKey(jenismobil, on_delete=models.CASCADE, null=True)
     nopolisi = models.CharField(max_length=8)
     konfirmasi = models.BooleanField()
@@ -40,7 +40,7 @@ class mobil (models.Model):
         return str(self.idmobil)
 
 class penyewaan (models.Model):
-    idpenyewaan = models.CharField(max_length=10, primary_key=True)
+    idpenyewaan = models.AutoField(primary_key=True)
     idpenyewa = models.ForeignKey(penyewa, on_delete=models.CASCADE)
     idkaryawan = models.ForeignKey(karyawan, on_delete=models.CASCADE)
     idmobil = models.ForeignKey(mobil, on_delete=models.CASCADE)

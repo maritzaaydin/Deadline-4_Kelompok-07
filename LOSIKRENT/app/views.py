@@ -6,11 +6,11 @@ from . import models
 # penyewa
 def penyewa(request):
     allpenyewaobj = models.penyewa.objects.all()
-    getpenyewaobj = models.penyewa.objects.get(idpenyewa=1)
+    # getpenyewaobj = models.penyewa.objects.get(idpenyewa=1)
     # filterpenyewaobj = models.penyewa.objects.filter(dokumen='ktp')
     return render (request, 'penyewa.html', {
         'allpenyewaobj' : allpenyewaobj,
-        'getpenyewaobj' : getpenyewaobj,
+        # 'getpenyewaobj' : getpenyewaobj,
         # 'filterpenyewaobj' : filterpenyewaobj
     })
 
@@ -57,10 +57,10 @@ def deletepenyewa(request,id):
 # karyawan
 def karyawan(request):
     allkaryawanobj = models.karyawan.objects.all()
-    getkaryawanobj = models.karyawan.objects.get(idkaryawan=1)
+    # getkaryawanobj = models.karyawan.objects.get(idkaryawan=1)
     return render (request, 'karyawan.html', {
         'allkaryawanobj' : allkaryawanobj,
-        'getkaryawanobj' : getkaryawanobj,
+        # 'getkaryawanobj' : getkaryawanobj,
     })
 
 def createdatakaryawan(request):
@@ -99,11 +99,11 @@ def deletekaryawan(request,id):
 
 # jenis mobil
 def jenismobil(request):
-    alljenismobilobj = models.karyawan.objects.all()
-    getjenismobilobj = models.karyawan.objects.get(idjenismobil=1)
+    alljenismobilobj = models.jenismobil.objects.all()
+    # getjenismobilobj = models.jenismobil.objects.get(idjenismobil=1)
     return render (request, 'jenismobil.html', {
         'alljenismobilobj' : alljenismobilobj,
-        'getjenismobilobj' : getjenismobilobj,
+        # 'getjenismobilobj' : getjenismobilobj,
     })
 
 def createdatajenismobil(request):
@@ -143,10 +143,10 @@ def deletejenismobil(request,id):
 #mobil
 def mobil(request):
     allmobilobj = models.mobil.objects.all()
-    getmobilobj = models.mobil.objects.get(idmobil=1)
+    # getmobilobj = models.mobil.objects.get(idmobil=1)
     return render (request, 'mobil.html', {
         'allmobilobj' : allmobilobj,
-        'getmobilobj' : getmobilobj,
+        # 'getmobilobj' : getmobilobj,
     })
 
 def createdatamobil(request):
@@ -186,10 +186,10 @@ def deletemobil(request,id):
 #penyewaan 
 def penyewaan(request):
     allpenyewaanobj = models.penyewaan.objects.all()
-    getpenyewaanobj = models.penyewaan.objects.get(idpenyewaan=1)
+    # getpenyewaanobj = models.penyewaan.objects.get(idpenyewaan=1)
     return render (request, 'penyewaan.html', {
         'allpenyewaanobj' : allpenyewaanobj,
-        'getpenyewaanobj' : getpenyewaanobj,
+        # 'getpenyewaanobj' : getpenyewaanobj,
     })
 
 def createdatapenyewaan(request):

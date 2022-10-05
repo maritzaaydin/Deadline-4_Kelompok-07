@@ -19,9 +19,20 @@
             <td>{{ item.namamobil}}</td>
             <td>{{ item.jumlahmobil}}</td>
             <td>{{ item.hargasewa}}</td>
+            <td>
+                <a href="{% url 'updatejenismobil' item.idjenismobil %}">
+                    <button>Update</button>
+                </a>
+                <a href="{% url 'deletejenismobil' item.idjenismobil %}">
+                    <button>Delete</button>
+                </a>
+            </td>
         </tr>
         {% endfor %}
     </table>
+    <a href="{% url 'createdatajenismobil' %}"> 
+        <button>Create Data</button>
+    </a>
     <h1>Get Jenis Mobil</h1>
     <table>
         <tr>

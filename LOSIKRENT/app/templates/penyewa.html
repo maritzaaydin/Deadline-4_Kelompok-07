@@ -23,9 +23,20 @@
             <td>{{ item.alamat }}</td>
             <td>{{ item.nomorktp }}</td>
             <td>{{ item.dokumen }}</td>
+            <td>
+                <a href="{% url 'updatepenyewa' item.idpenyewa %}">
+                    <button>Update</button>
+                </a>
+                <a href="{% url 'deletepenyewa' item.idpenyewa %}">
+                    <button>Delete</button>
+                </a>
+            </td>
         </tr>
         {% endfor %}
     </table>
+    <a href="{% url 'createdatapenyewa' %}"> 
+        <button>Create Data</button>
+    </a>
     <h1>Get Penyewa</h1>
     <table>
         <tr>

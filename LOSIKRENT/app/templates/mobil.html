@@ -17,9 +17,20 @@
         <tr>
             <td>{{ item.nopolisi}}</td>
             <td>{{ item.konfirmasi}}</td>
+            <td>
+                <a href="{% url 'updatemobil' item.idmobil %}">
+                    <button>Update</button>
+                </a>
+                <a href="{% url 'deletemobil' item.idmobil %}">
+                    <button>Delete</button>
+                </a>
+            </td>
         </tr>
         {% endfor %}
     </table>
+    <a href="{% url 'createdatajenismobil' %}"> 
+        <button>Create Data</button>
+    </a>
     <h1>Get Mobil</h1>
     <table>
         <tr>
